@@ -1,0 +1,6 @@
+__pycache__/
+access.log
+secret.py
+venv/
+.DS_Store
+db*
