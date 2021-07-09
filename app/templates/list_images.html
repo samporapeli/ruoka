@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+
+{% for image in images %}
+<li>{{image.id}} {{image.filename}}</li>
+{% endfor %}
+
+</ul>
+{% endblock %}
