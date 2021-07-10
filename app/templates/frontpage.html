@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
+
+{# Upload button #}
+
 <h3>
     <a href="{{ url_for('upload_image') }}">Upload an image</a>
 </h3>
+
+
+
+{# Image grid #}
+
+<ul class="image-grid-container">
+
+{% for image in images %}
+<li class="image-grid-item"><img src="{{ image.url }}"></li>
+{% endfor %}
+
+</ul>
+
+
+
 {% endblock %}
