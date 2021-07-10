@@ -7,7 +7,7 @@ class Image(db.Model):
 
     @property
     def url(self):
-        return url_for('serve_image', path=self.filename)
+        return url_for('serve_image_by_uuid', path=self.filename)
 
     def __repr__(self):
         return '<Image %r>' % self.id
