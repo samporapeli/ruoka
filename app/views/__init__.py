@@ -1,2 +1,2 @@
 import app.views.frontpage
-import app.views.upload
+import app.views.image_uploads

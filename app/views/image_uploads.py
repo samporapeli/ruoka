@@ -41,12 +41,12 @@ def upload_image():
 # want to do that at some point.
 
 @app.route('/images/<path:path>')
-def serve_image(path):
+def serve_image_by_uuid(path):
     return send_from_directory(app.config['UPLOAD_FOLDER'], path)
 
 # A more human-readable url with the image's counter id
 @app.route('/images/<int:id>')
-def serve_image(id):
+def serve_image_by_counter_id(id):
     image = Image.query.filter_by(id=id).first()
     if image is None:
         abort(404)
