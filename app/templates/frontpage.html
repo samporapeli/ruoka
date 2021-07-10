@@ -25,7 +25,7 @@
 <ul class="image-grid-container">
 
 {% for image in images %}
-<li class="image-grid-item"><a href="{{ image.url }}"><img src="{{ image.url }}"></a></li>
+<li class="image-grid-item"><a href="{{ url_for('image_info', image_id=image.id) }}"><img src="{{ image.url }}"></a></li>
 {% endfor %}
 
 </ul>
