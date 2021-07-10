@@ -29,3 +29,7 @@ html {
 .image-grid-item img {
     width: 100%;
 }
+
+a img {
+    display: block;
+}
