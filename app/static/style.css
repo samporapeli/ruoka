@@ -18,7 +18,8 @@ html {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    margin: 16px -8px;
+    margin: -8px;
+    margin-top: 16px;
     gap: 3px; /* only 82% support as of July 2021 */
 }
 
