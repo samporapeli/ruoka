@@ -1,4 +1,4 @@
-from flask import render_template, request, session
+from flask import render_template, request, session, url_for, redirect
 
 from app import app, db
 from app.models.user import User
@@ -12,6 +12,7 @@ def user():
     if request.method == 'POST':
         new_user = request.form.get('user')
         session['user'] = int(new_user)
+        return redirect(url_for('view_frontpage'))
 
     users = User.query.all()
     current_user = get_user()
