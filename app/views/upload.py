@@ -22,17 +22,14 @@ def upload_image():
     if file.filename == '': 
         return render_template('upload_image.html')
 
-    print(file.content_type)
-
     if file.content_type == 'image/jpeg':
         extension = '.jpeg'
-
     elif file.content_type == 'image/png':
         extension = '.png'
-
     else:
         return 'invalid filetype'
-    
+
+    # A valid image is uploaded, save to disk
     filename = random_filename() + extension
     db.session.add(Image(filename=filename))
     db.session.commit()
