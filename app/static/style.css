@@ -36,9 +36,15 @@ html {
     justify-self: center;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 640px) and (max-width: 1023px) {
     .image-grid-item {
-        flex: 1 0 calc(33% - 2px);
+        flex: 1 0 calc(33% - 3px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .image-grid-item {
+        flex: 1 0 calc(25% - 3px);
     }
 }
 
