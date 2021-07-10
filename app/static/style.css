@@ -15,11 +15,12 @@ html {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    margin: 16px -8px;
+    gap: 3px; /* only 82% support as of July 2021 */
 }
 
 .image-grid-item {
     width: 200px;
-    border: 1px solid hsla(0, 0%, 90%, 1.0);
     display: flex;
     align-items: center;
     flex: 1 0 calc(50% - 2px);
