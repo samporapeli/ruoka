@@ -4,7 +4,8 @@ from app import app, db
 from app.models.user import User
 
 def get_user():
-    return session.get('user')
+    user_id = session.get('user')
+    return User.query.filter_by(id=user_id).first()
 
 @app.route('/me', methods=['GET', 'POST'])
 def user():
@@ -15,4 +16,4 @@ def user():
     users = User.query.all()
     current_user = get_user()
 
-    return render_template('user.html', users=users, current_user_id=current_user)
+    return render_template('user.html', users=users, current_user=current_user)

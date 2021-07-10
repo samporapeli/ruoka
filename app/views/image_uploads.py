@@ -26,7 +26,7 @@ def save_as_thumbnail(file, io, max_side_length=1536):
 
 
 
-def save_uploaded_image(file):
+def save_uploaded_image(file, user):
     if file.filename == '': 
         return False
 
@@ -39,7 +39,7 @@ def save_uploaded_image(file):
 
     # A valid image is uploaded, save to disk
     filename = random_filename() + extension
-    db.session.add(Image(filename=filename))
+    db.session.add(Image(filename=filename, user_id=user.id))
     db.session.commit()
     save_path = path.join(app.config['UPLOAD_FOLDER'], filename)
     with open(save_path, 'w') as f:
