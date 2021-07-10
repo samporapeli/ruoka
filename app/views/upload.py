@@ -3,7 +3,7 @@ from os import path
 from uuid import uuid4
 
 from app import app, db
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, send_from_directory
 
 from app.models.image import Image
 
@@ -36,6 +36,10 @@ def upload_image():
     file.save(path.join(app.config['UPLOAD_FOLDER'], filename))
 
     return redirect(url_for('view_frontpage'))
+
+@app.route('/images/<path:path>')
+def serve_image(path):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], path)
 
 @app.route('/list-images')
 def list_images():
