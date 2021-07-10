@@ -3,6 +3,8 @@
 {% block content %}
 
 Image ID: {{ image.id }}
+<br>
+User: {{ image.user.username }}
 <img class="fullwidth" src="{{ image.url }}">
 
 {% endblock %}
