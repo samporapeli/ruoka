@@ -1,6 +1,7 @@
+from flask import render_template, request, session
+
 from app import app, db
 
-from flask import render_template, request, session
 
 @app.route('/me', methods=['GET', 'POST'])
 def user():

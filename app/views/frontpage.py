@@ -1,8 +1,8 @@
+from flask import render_template, request
+
 from app import app, db
 from app.views.image_uploads import save_uploaded_image
 from app.models.image import Image
-
-from flask import render_template, request
 
 @app.route('/', methods=['GET', 'POST'])
 def view_frontpage():
