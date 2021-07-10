@@ -1,5 +1,5 @@
 html {
-    font-family: 'Helvetia Neue', Helvetica, Arial, sans-serif;
+    font-family: -apple-system, 'Helvetia Neue', Helvetica, Arial, sans-serif;
 }
 
 .action {
@@ -9,6 +9,9 @@ html {
     display: inline-block;
     text-decoration: none;
     padding: 6px 8px;
+    background: none;
+    font-size: inherit;
+    margin: 0;
 }
 
 .image-grid-container {
