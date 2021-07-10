@@ -2,9 +2,6 @@
 
 {% block content %}
 <form method="post" enctype="multipart/form-data">
-    <label for="images">Images: </label>
-    <input name="image" type="file" accept=".jpg, .jpeg, .png" multiple>
-    <br>
-    <button type="submit">Create</add>
+    <input name="image" type="file" accept=".jpg, .jpeg, .png" onchange="this.form.submit()">
 </form>
 {% endblock %}
