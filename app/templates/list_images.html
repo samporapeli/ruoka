@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
+<ul class="image-grid-container">
 
 {% for image in images %}
-<li><a href="{{image.url}}">{{image.id}} {{image.filename}}</a></li>
+<li class="image-grid-item"><img src="{{ image.url }}"></li>
 {% endfor %}
 
 </ul>
