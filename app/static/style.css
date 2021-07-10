@@ -23,6 +23,12 @@ html {
     gap: 3px; /* only 82% support as of July 2021 */
 }
 
+.fullwidth {
+    margin: -8px;
+    margin-top: 8px;
+    width: calc(100% + 16px);
+}
+
 .image-grid-item {
     display: flex;
     flex: 1 0 calc(50% - 2px);
