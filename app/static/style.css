@@ -23,10 +23,15 @@ html {
 }
 
 .image-grid-item {
-    width: 200px;
     display: flex;
     align-items: center;
     flex: 1 0 calc(50% - 2px);
+}
+
+@media screen and (min-width: 640px) {
+    .image-grid-item {
+        flex: 1 0 calc(33% - 2px);
+    }
 }
 
 .image-grid-item a {
