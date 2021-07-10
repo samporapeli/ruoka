@@ -2,6 +2,15 @@ html {
     font-family: 'Helvetia Neue', Helvetica, Arial, sans-serif;
 }
 
+.action {
+    color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 8px;
+}
+
 .image-grid-container {
     display: flex;
     flex-wrap: wrap;
