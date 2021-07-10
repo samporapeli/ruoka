@@ -6,7 +6,11 @@
 
 {# Upload button #}
 
-<a class="action" href="{{ url_for('upload_image') }}">Upload an image</a>
+<button class="action" onclick="document.getElementById('selected-file').click()">Upload an image</button>
+
+<form style="display: none" method="post" enctype="multipart/form-data">
+    <input type="file" id="selected-file" name="image" accept=".jpg, .jpeg, .png" onchange="this.form.submit()">
+</form>
 
 
 
