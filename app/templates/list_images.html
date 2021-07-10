@@ -4,7 +4,7 @@
 <ul>
 
 {% for image in images %}
-<li>{{image.id}} {{image.filename}}</li>
+<li><a href="{{image.url}}">{{image.id}} {{image.filename}}</a></li>
 {% endfor %}
 
 </ul>
