@@ -2,6 +2,18 @@
 
 {% block content %}
 
-Your name: {{ name }}
+<form method="POST">
+
+{% for user in users %}
+{% if user.id == current_user_id %}
+<input type="radio" id="user-{{ user.id }}" name="user" value="{{ user.id }}" checked="checked">
+{% else %}
+<input type="radio" id="user-{{ user.id }}" name="user" value="{{ user.id }}">
+{% endif %}
+<label for="user-{{ user.id }}">{{ user.username }}</label><br>
+{% endfor %}
+
+<input type="submit" value="Set user">
+</form>
 
 {% endblock %}

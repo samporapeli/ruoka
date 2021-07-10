@@ -1,9 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from secret import upload_folder, max_upload_size
+from secret import upload_folder, max_upload_size, secret_key
 
 app = Flask(__name__)
+app.secret_key = secret_key
 
 app.config['UPLOAD_FOLDER'] = upload_folder
 app.config['MAX_CONTENT_LENGTH'] = max_upload_size
