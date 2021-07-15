@@ -7,6 +7,6 @@ cd ruoka
 python3 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
-python init_db.py
+python init_db.dev.py
 python ruoka.py
 ```
