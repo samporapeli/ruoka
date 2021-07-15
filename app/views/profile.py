@@ -10,6 +10,6 @@ def profile(username):
     if user is None:
         abort(404)
     else:
-        images = Image.query.filter_by(user=user).all()
+        images = Image.query.filter_by(user=user).order_by(Image.id.desc()).all()
         return render_template('profile.html', user=user, images=images)
 
