@@ -4,7 +4,7 @@
 
 Image ID: {{ image.id }}
 <br>
-User: {{ image.user.username }}
+User: <a href="{{ url_for('profile', username=image.user.username) }}">{{ image.user.username }}</a>
 <img class="fullwidth" src="{{ image.url }}">
 
 {% endblock %}
