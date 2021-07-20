@@ -14,3 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 from app import views
+
+# make get_user globally available
+from app.views.user import get_user
+app.jinja_env.globals.update(get_user=get_user)

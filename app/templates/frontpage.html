@@ -6,15 +6,11 @@
 
 {# Upload button #}
 
-{% if user == None %}
+{% if get_user() == None %}
 <a href="/me" class="action">Set user to upload images</a>
 {% else %}
 
-<button class="action" onclick="document.getElementById('selected-file').click()">Upload an image</button>
-
-<form style="display: none" method="post" enctype="multipart/form-data">
-    <input type="file" id="selected-file" name="image" accept=".jpg, .jpeg, .png" onchange="this.form.submit()">
-</form>
+{% include 'components/upload_form.html' %}
 
 {% endif %}
 
