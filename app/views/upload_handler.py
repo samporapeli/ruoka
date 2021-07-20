@@ -5,7 +5,7 @@ from app.views.image_uploads import save_uploaded_image
 from app.views.user import get_user
 
 # handle upload and redirect user to frontpage
-@app.route('/', methods=['POST'])
+@app.route('/upload-image', methods=['POST'])
 def handle_upload():
     user = get_user()
     if 'image' in request.files:
