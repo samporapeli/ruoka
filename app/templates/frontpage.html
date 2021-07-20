@@ -6,7 +6,7 @@
 
 {# Upload button #}
 
-{% if user == None %}
+{% if get_user() == None %}
 <a href="/me" class="action">Set user to upload images</a>
 {% else %}
 
