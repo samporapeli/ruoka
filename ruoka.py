@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import logging
-
 import werkzeug.serving
 
 from app import app
