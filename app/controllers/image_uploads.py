@@ -12,7 +12,7 @@ def random_filename():
     return str(uuid4())
 
 # 1536 = 1.5 * 1024
-def save_as_thumbnail(file, io, max_side_length=1536):
+def create_thumbnail(file, max_side_length=1536):
     image = PIL.Image.open(file)
     width, height = image.size
 
@@ -21,8 +21,7 @@ def save_as_thumbnail(file, io, max_side_length=1536):
     new_size = (width * multiplier, height * multiplier)
 
     image.thumbnail(new_size)
-    image_format = file.content_type.split('/')[1]
-    image.save(io, image_format)
+    return image
 
 
 
@@ -32,8 +31,13 @@ def save_uploaded_image(file, user):
 
     if file.content_type == 'image/jpeg':
         extension = '.jpeg'
+        image_format = 'jpeg'
+
     elif file.content_type == 'image/png':
-        extension = '.png'
+        # convert PNGs to JPEGs
+        extension = '.jpeg'
+        image_format = 'jpeg'
+
     else:
         abort(403)
 
@@ -43,7 +47,8 @@ def save_uploaded_image(file, user):
     db.session.commit()
     save_path = path.join(app.config['UPLOAD_FOLDER'], filename)
     with open(save_path, 'w') as f:
-        save_as_thumbnail(file, f)
+        image = create_thumbnail(file)
+        image.save(f, image_format)
 
     return True
 
