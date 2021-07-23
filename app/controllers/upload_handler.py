@@ -1,8 +1,8 @@
 from flask import render_template, request, redirect, abort, url_for
 
 from app import app, db
-from app.views.image_uploads import save_uploaded_image
-from app.views.user import get_user
+from app.controllers.image_uploads import save_uploaded_image
+from app.controllers.user import get_user
 
 # handle upload and redirect user to frontpage
 @app.route('/upload-image', methods=['POST'])

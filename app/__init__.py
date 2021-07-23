@@ -13,8 +13,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from app import views
+from app import controllers
 
 # make get_user globally available
-from app.views.user import get_user
+from app.controllers.user import get_user
 app.jinja_env.globals.update(get_user=get_user)
