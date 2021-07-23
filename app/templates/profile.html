@@ -4,11 +4,11 @@
 
 <h2>{{ user.username }}</h2>
 
-{% if not images %}
-<h3>{{ user.username }} hasn't uploaded anything</h3>
-{% else %}
-<h3>Uploads</h3>
+<h3>
+    {{ images|length }}
+    image{% if images|length != 1 %}s{% endif %}
+</h3>
+
 {% include 'components/image_grid.html' %}
-{% endif %}
 
 {% endblock %}
