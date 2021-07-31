@@ -20,7 +20,6 @@ It should not be stored in version control system, as `secret_key` must not be s
 - `max_upload_size` (int), for example 100 million for 100MB
 - `secret_key` (str) with a cryptographically secure random token. Can be generated with the command below:
     - `python3 -c 'import secrets; print(secrets.token_urlsafe())'`
-- `port` (int)
 - `debug` (bool)
 
 Example content of `secret.py`:
@@ -29,6 +28,5 @@ Example content of `secret.py`:
 upload_folder = '/home/user/Projects/ruoka/uploads'
 max_upload_size = 100000000
 secret_key = 'r09cBDUkXjMUG5-wgBUdw-1CppFZsF2Dcrt6bDpYoCU' # just generate one yourself and don't use this
-port = 3000
 debug = True # set to False in production
 ```
