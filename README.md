@@ -8,6 +8,7 @@ python3 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
 # create a secret.py as described below
+flask db upgrade
 python init_db.dev.py
 flask run
 ```
