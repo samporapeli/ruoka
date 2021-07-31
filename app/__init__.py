@@ -11,6 +11,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app import controllers
+from app import cli_commands
 
 # make get_user globally available
 from app.controllers.user import get_user

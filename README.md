@@ -9,7 +9,7 @@ python3 -m venv venv
 pip install -r requirements.txt
 # create .env file as described below
 flask db upgrade
-python init_db.dev.py
+flask add-user dummy1
 flask run
 ```
 
