@@ -9,7 +9,7 @@ python3 -m venv venv
 pip install -r requirements.txt
 # create a secret.py as described below
 python init_db.dev.py
-python ruoka.py
+flask run
 ```
 
 ## create `secret.py` configuration file
