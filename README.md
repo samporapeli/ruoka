@@ -22,6 +22,6 @@ flask run
 Example content of `.env`:
 
 ```
-SECRET_KEY=r09cBDUkXjMUG5-wgBUdw-1CppFZsF2Dcrt6bDpYoCU' # just generate one yourself and don't use this
+SECRET_KEY=r09cBDUkXjMUG5-wgBUdw-1CppFZsF2Dcrt6bDpYoCU # just generate one yourself and don't use this
 UPLOAD_FOLDER='/home/user/Projects/ruoka/uploads'
 ```
