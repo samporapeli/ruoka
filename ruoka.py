@@ -14,4 +14,5 @@ werkzeug.serving.WSGIRequestHandler.address_string = lambda self: self.headers.g
 # log to a file (access.log), not stderr
 logging.basicConfig(filename='access.log', level=logging.DEBUG, format='%(message)s')
 
-app.run(port=port, debug=debug, use_reloader=debug)
+if __name__ == '__main__':
+    app.run(port=port, debug=debug, use_reloader=debug)
