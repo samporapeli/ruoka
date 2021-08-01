@@ -1,6 +1,6 @@
 __pycache__/
 access.log
-secret.py
+.env
 venv/
 .DS_Store
 db*
