@@ -8,9 +8,15 @@ User: <a href="{{ url_for('profile', username=image.user.username) }}">{{ image.
 <img class="fullwidth" src="{{ image.url }}">
 
 {% if image.user == get_user() %}
-<form method="delete">
-    <button name="delete-button" value="true">Delete this image</button>
-</form>
+<script>
+let delete_image = () => {
+    let answer = prompt("Are you sure you want to delete this image? Please type \"delete\" to confirm.")
+    if (answer === 'delete') {
+        alert('deleting is not yet implemented')
+    }
+}
+</script>
+<button onclick="delete_image()">Delete this image</button>
 {% endif %}
 
 {% endblock %}
