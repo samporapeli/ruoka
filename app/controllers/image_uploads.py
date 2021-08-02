@@ -1,5 +1,5 @@
 from random import random
-from os import path
+import os
 from uuid import uuid4
 
 from flask import render_template, request, redirect, url_for, send_from_directory, abort
@@ -7,6 +7,7 @@ import PIL.Image
 
 from app import app, db
 from app.models.image import Image
+from app.controllers.user import get_user
 
 def random_filename():
     return str(uuid4())
@@ -57,11 +58,35 @@ def save_uploaded_image(file, user):
     filename = random_filename() + extension
     db.session.add(Image(filename=filename, user_id=user.id))
     db.session.commit()
-    save_path = path.join(app.config['UPLOAD_FOLDER'], filename)
+    save_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     with open(save_path, 'w') as f:
         image.save(f, image_format)
 
     return True
+
+
+
+# Image deletion
+@app.route('/delete-image', methods=['POST'])
+def delete_image():
+    user = get_user()
+    image_id = request.form.get('image-id')
+    image = Image.query.filter_by(id=image_id).first()
+    if not image:
+        abort(404)
+    if user != image.user:
+        abort(403)
+
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
+    try:
+        os.remove(image_path)
+    except FileNotFoundError:
+        pass
+
+    db.session.delete(image)
+    db.session.commit()
+
+    return redirect(url_for('view_frontpage'))
 
 
 
