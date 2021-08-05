@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<a href="{{ url_for('view_frontpage') }}">← Images</a>
+<br>
+<br>
+
 Image ID: {{ image.id }}
 <br>
 User: <a href="{{ url_for('profile', username=image.user.username) }}">{{ image.user.username }}</a>
