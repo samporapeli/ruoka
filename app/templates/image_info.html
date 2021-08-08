@@ -18,9 +18,17 @@ let checkDeletion = (event) => {
     }
 }
 </script>
+<form action="/rotate-image-clockwise" method="post" class="rotate-buttons">
+    <input type="hidden" name="image-id" value="{{ image.id }}">
+    <button name="rotate-clockwise-button">Rotate ↷</button>
+</form>
+<form action="/rotate-image-counterclockwise" method="post" class="rotate-buttons">
+    <input type="hidden" name="image-id" value="{{ image.id }}">
+    <button name="rotate-counterclockwise-button">Rotate ↶</button>
+</form>
 <form action="/delete-image" method="post" onsubmit="return checkDeletion(event)">
     <input type="hidden" name="image-id" value="{{ image.id }}">
-    <button name="delete-button" value="true">Delete this image</button>
+    <button name="delete-button" value="true" id="delete-image-button">Delete this image</button>
 </form>
 {% endif %}
 

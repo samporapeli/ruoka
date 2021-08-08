@@ -28,6 +28,14 @@ a:hover {
     margin: 0;
 }
 
+.rotate-buttons {
+    display: inline;
+}
+
+#delete-image-button {
+    margin-top: 1rem;
+}
+
 .image-grid-container {
     display: flex;
     flex-wrap: wrap;
