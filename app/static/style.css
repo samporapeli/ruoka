@@ -26,6 +26,7 @@ html {
 .fullwidth {
     margin: -8px;
     margin-top: 8px;
+    margin-bottom: 8px;
     width: calc(100% + 16px);
 }
 
