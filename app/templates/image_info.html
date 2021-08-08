@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% include 'components/navigate_back.html' %}
+
 Image ID: {{ image.id }}
 <br>
 User: <a href="{{ url_for('profile', username=image.user.username) }}">{{ image.user.username }}</a>

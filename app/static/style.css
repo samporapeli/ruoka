@@ -2,6 +2,20 @@ html {
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: hsl(220, 80%, 50%);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.navigate-back {
+    display: block;
+    margin-bottom: 1rem;
+}
+
 .action {
     color: inherit;
     border: 1px solid lightgray;
