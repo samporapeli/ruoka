@@ -10,6 +10,15 @@
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon-background.png') }}">
 </head>
 <body>
+    {% macro nav_item(text, link) -%}
+        <div class="nav-item"><a href="{{ link }}">{{ text }}</a></div>
+    {%- endmacro %}
+
+    <nav>
+        {{ nav_item('Images', url_for('view_frontpage')) }}
+        {{ nav_item('Settings', url_for('user')) }}
+    </nav>
+
     <div class="container">
     {% block content %}
         hello
