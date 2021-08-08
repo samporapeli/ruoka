@@ -15,6 +15,7 @@
     {%- endmacro %}
 
     <nav>
+        <div class="nav-item"><a class="nav-logo-link" href="/"><img class="nav-logo" src="{{ url_for('static', filename='icon-transparent.png') }}"></a></div>
         {{ nav_item('Images', url_for('view_frontpage')) }}
         {{ nav_item('Settings', url_for('user')) }}
     </nav>

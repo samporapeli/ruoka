@@ -20,6 +20,26 @@ nav {
     padding: 0 0.5em;
 }
 
+.nav-logo-link {
+    /* override ".nav-item a" selector because the icon is taller than the text links
+     * and we don't want to grow the whole <nav> with vertical padding */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    /* the :hover effect should be the height of the <nav>, not the height of the icon */
+    height: 100%;
+
+    /* center the icon vertically */
+    display: flex;
+
+    /* and don't stretch it */
+    align-items: center;
+}
+
+.nav-logo {
+    width: 20px;
+}
+
 .nav-item {
     display: flex;
     align-items: center;
