@@ -7,7 +7,7 @@ def get_user():
     user_id = session.get('user')
     return User.query.filter_by(id=user_id).first()
 
-@app.route('/me', methods=['GET', 'POST'])
+@app.route('/settings', methods=['GET', 'POST'])
 def user():
     if request.method == 'POST':
         new_user = request.form.get('user')
