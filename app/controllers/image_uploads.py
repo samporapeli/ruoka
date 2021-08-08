@@ -100,7 +100,7 @@ def rotate_image(deg):
 
     image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
     img = PIL.Image.open(image_path)
-    rotated = img.rotate(deg)
+    rotated = img.rotate(deg, expand=True)
     rotated.save(image_path)
 
     return redirect(url_for('image_info', image_id=image_id))
