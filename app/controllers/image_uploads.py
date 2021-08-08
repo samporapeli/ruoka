@@ -88,7 +88,30 @@ def delete_image():
 
     return redirect(url_for('view_frontpage'))
 
+# Image rotation
+def rotate_image(deg):
+    user = get_user()
+    image_id = request.form.get('image-id')
+    image = Image.query.filter_by(id=image_id).first()
+    if not Image:
+        abort(404)
+    if user != image.user:
+        abort(403)
 
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
+    img = PIL.Image.open(image_path)
+    rotated = img.rotate(deg)
+    rotated.save(image_path)
+
+    return redirect(url_for('image_info', image_id=image_id))
+
+@app.route('/rotate-image-clockwise', methods=['POST'])
+def rotate_image_clockwise():
+    return rotate_image(-90)
+
+@app.route('/rotate-image-counterclockwise', methods=['POST'])
+def rotate_image_counterclockwise():
+    return rotate_image(90)
 
 # This is similar to how Nginx would serve the static images if we
 # want to do that at some point.
