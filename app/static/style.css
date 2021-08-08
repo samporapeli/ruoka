@@ -2,6 +2,19 @@ html {
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Content */
+
+.container {
+    margin: 8px;
+}
+
 a {
     text-decoration: none;
     color: hsl(220, 80%, 50%);
