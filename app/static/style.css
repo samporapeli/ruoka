@@ -20,11 +20,13 @@ nav {
     padding: 0 0.5em;
 }
 
-.nav-logo-link {
-    /* override ".nav-item a" selector because the icon is taller than the text links
-     * and we don't want to grow the whole <nav> with vertical padding */
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+/* the selector is so complicated so that the specificity wins ".nav-item a"
+ * and we don't need !important */
+.nav-item a.nav-logo-link {
+    /* the icon is taller than the text links and we don't want to grow the whole <nav>
+     * with vertical padding */
+    padding-top: 0;
+    padding-bottom: 0;
 
     /* the :hover effect should be the height of the <nav>, not the height of the icon */
     height: 100%;
