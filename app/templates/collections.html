@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{# New button #}
+
+{% if get_user() == None %}
+<a href="{{ url_for('user') }}" class="action">Set user to create notebooks</a>
+{% else %}
+
+<button class="action" onclick="alert('not implemented')">New notebook</button>
+
+{% endif %}
+
+
+{% endblock %}
