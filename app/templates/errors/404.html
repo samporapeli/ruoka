@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    {% include 'errors/style.css' %}
+</style>
+<div class="error">
+    <h1>Not found</h1>
+    <h2>HTTP status 404</h2>
+    <h2><a href="{{ url_for('view_frontpage') }}">Go to frontpage</a></h2>
+</div>
+{% endblock %}
