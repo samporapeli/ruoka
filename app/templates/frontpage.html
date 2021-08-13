@@ -7,7 +7,7 @@
 {# Upload button #}
 
 {% if get_user() == None %}
-<a href="/me" class="action">Set user to upload images</a>
+<a href="{{ url_for('user') }}" class="action">Set user to upload images</a>
 {% else %}
 
 {% include 'components/upload_form.html' %}
