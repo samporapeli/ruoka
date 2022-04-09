@@ -5,6 +5,23 @@
 Image ID: {{ image.id }}
 <br>
 User: <a href="{{ url_for('profile', username=image.user.username) }}">{{ image.user.username }}</a>
+<br>
+<br>
+
+{# Upload button #}
+
+{% if get_user() == None %}
+<a href="{{ url_for('user') }}" class="action">Set user to add this to a notebook</a>
+{% else %}
+
+<form action="/add-image-to-notebook" method="get">
+    <input type="hidden" name="image-id" value="{{ image.id }}">
+    <button class="action" name="delete-button" value="true">Add to notebook</button>
+</form>
+
+{% endif %}
+
+
 <img class="fullwidth" src="{{ image.url }}">
 
 {% if image.user == get_user() %}
